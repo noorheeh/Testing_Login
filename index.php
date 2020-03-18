@@ -23,8 +23,6 @@ if(!empty($_SESSION["admin"]))
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
 </head>
 
 <body id="page-top">
@@ -81,10 +79,8 @@ if(!empty($_SESSION["admin"]))
   <div class="container-fluid text-center">
   <h1>'.$message.'</h1>
   </div>
-  </header>';   
+  </header>';
   ?>
-
-  
 
   <script type="text/javascript" >
   // Set timeout variables.
@@ -95,12 +91,10 @@ if(!empty($_SESSION["admin"]))
   if($num > 0){ 
     $data = mysqli_fetch_array($result);
     echo $data["inactivity_time"];
-
   }else{
     echo "60000";  // Timeout in 1 min.
   }
   mysqli_close($conn);
-
   ?>;
   var timeoutTimer;
 
@@ -120,7 +114,9 @@ function IdleTimeout() {
   alert("Session Timeout");
   window.location = 'logout.php';
 }
+
 </script>
+
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

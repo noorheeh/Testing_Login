@@ -1,6 +1,5 @@
 <?php
 include 'theme.php';
-echo theme();
 session_start();
 if (empty($_SESSION["admin"]))
 	header('Location: '.theme().'/index.php');

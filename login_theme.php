@@ -12,7 +12,6 @@ if($num > 0){
 	$insert ="INSERT INTO `settings`(`id`,`inactivity_time`, `login_messages`,`login_theme`) VALUES ('1','60000','Welcome @user','$theme');";
 	$result = mysqli_query($conn, $insert) or die(mysql_error());
 
-
 }
 echo "<script>alert('Theme set to ".$_POST["theme"]."');
 window.location.assign('settings.php');</script>";
