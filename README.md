@@ -8,4 +8,5 @@ must have mailsend (in wamp) to use this.
 **password:** Admin1999
 
 ## Json Receiver
-must run **server.php** first then run **json_receiver1.php** and **json_receiver2.php**.
+must run **server.php** first then run **json_receiver1.php** and **json_receiver2.php**.\
+then login/logout json data will received in **json_receiver1.php** and send a json response to **json_receiver2.php**. 
