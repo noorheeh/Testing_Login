@@ -2,7 +2,7 @@
 <?php
 include 'theme.php';
 session_start();
-  date_default_timezone_set('Asia/Jerusalem');
+date_default_timezone_set('Asia/Jerusalem');
 $conn = mysqli_connect("localhost:3306", "root", "","testing")
 or die("Could not connect: ".mysqli_error($conn));
 
@@ -98,6 +98,8 @@ if($num > 0){
 							window.location.assign('../admin.php');
 							}, 600);  
 							</script>";
+						}else{
+							echo "<label>username or password Invalid</label>";
 						}
 					}else{
 						echo "<label>username or password Invalid</label>";
