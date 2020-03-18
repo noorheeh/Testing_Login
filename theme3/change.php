@@ -32,7 +32,6 @@ include("../user_status.php");
 </head>
 <body>
 	
-	
 	<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 			<span class="login100-form-title p-b-37">
@@ -58,10 +57,12 @@ include("../user_status.php");
 			<div class="container-login100-form-btn">
 				<input id="changebtn" class="login100-form-btn" type="submit" value="Change">
 			</div>
-<button class="login100-form-btn bg-primary" onclick="window.location.href = '../index.php';">
-							Back to Home
-						</button>		
-					</div>
+			<div class="container-login100-form-btn">
+				<button class="login100-form-btn bg-primary " onclick="window.location.href = '../index.php';">
+					Back to Home
+				</button>
+			</div>		
+		</div>
 	</div>
 </div>
 

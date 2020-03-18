@@ -64,10 +64,9 @@ include("../user_status.php");
 						done
 					</button>
 				</div>
-				<a href="../index.php">Back to home</a>
 				<button class="login100-form-btn bg-primary" onclick="window.location.href = '../index.php';">
-							Back to home
-						</button>
+					Back to home
+				</button>
 			</div>
 		</div>
 	</div>
@@ -116,13 +115,6 @@ function IdleTimeout() {
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/tilt/tilt.jquery.min.js"></script>
-<script >
-	$('.js-tilt').tilt({
-		scale: 1.1
-	})
-</script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
 
