@@ -1,4 +1,7 @@
 <?php 
+include("../theme.php");
+if (theme() != "theme3")
+    header('Location: ../'.theme().'/index.php');
 session_start();
 if (!empty($_SESSION["username"]) || !empty($_SESSION["admin"]))
     header('Location: ../index.php');

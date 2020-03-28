@@ -1,5 +1,7 @@
 <?php
 include("../user_status.php");
+if (theme() != "theme1")
+    header('Location: ../'.theme().'/change.php');
 ?>
 <!DOCTYPE html>
 <html onload="StartTimers();" onmousemove="ResetTimers();" ontouchmove="ResetTimers();">
@@ -15,14 +17,13 @@ include("../user_status.php");
 </head>
 <body>
 	<div class="container">
+	<div id="response" class="bg-danger text-center"></div>
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
 					<h3>Change password</h3>
 				</div>
 				<div class="card-body">
-					<div id="response" class="bg-danger text-center"></div>
-
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>

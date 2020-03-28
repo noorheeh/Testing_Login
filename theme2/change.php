@@ -1,5 +1,7 @@
 <?php
 include("../user_status.php");
+if (theme() != "theme2")
+    header('Location: ../'.theme().'/change.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" onload="StartTimers();" onmousemove="ResetTimers();" ontouchmove="ResetTimers();">
