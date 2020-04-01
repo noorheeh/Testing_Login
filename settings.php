@@ -1,10 +1,9 @@
 <?php
 include("config.php");
 include 'theme.php';
-echo theme();
 session_start();
 if (empty($_SESSION["admin"]))
-header('Location: '.theme().'/index.php');
+  header('Location: '.theme().'/index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +66,7 @@ header('Location: '.theme().'/index.php');
       <div class="col-md-6 m-auto p-5">
         <div class="col-12 p-2">
           <h2>Change user inactivity time</h2></div>  
-          <form action="inactivity_time.php" method="post">
+          <form action="change_settings.php" method="post">
             <div class="d-flex">
               <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
@@ -85,63 +84,63 @@ header('Location: '.theme().'/index.php');
             </div>
           </div>
           <div class="p-3 col-sm-12 ">
-            <input type="submit" value="change" class="btn btn-success btn-lg">
+            <input type="submit" name="inactivity_time" value="change" class="btn btn-success btn-lg">
           </div>        
         </form>
+      </div>
+      <div class="col-md-6 m-auto">
+        <div class="col-12 p-2">
+          <h2>Change Login message</h2>
+          <p>to show the username in message write "@user" where you want to show.</p>
         </div>
-       <div class="col-md-6 m-auto">
-          <div class="col-12 p-2">
-            <h2>Change Login message</h2>
-            <p>to show the username in message write "@user" where you want to show.</p>
-          </div>
-            <form action="login_message.php" method="post">
+        <form action="change_settings.php" method="post">
           <div class="input-group input-group-lg">
             <div class="input-group-prepend">
               <span class="input-group-text">Message</span>
             </div>
             <input class="form-control" aria-label="With textarea" name="message" required value='  <?php 
-        $query = "SELECT * FROM settings WHERE `id` = 1;";
-  $result = mysqli_query($conn, $query) or die("Invalid query");
-  $num = mysqli_num_rows($result);
-  if($num > 0){
-  $data = mysqli_fetch_array($result);
-  echo $data["login_messages"];   
-}
-        ?>'>
+            $query = "SELECT * FROM settings WHERE `id` = 1;";
+            $result = mysqli_query($conn, $query) or die("Invalid query");
+            $num = mysqli_num_rows($result);
+            if($num > 0){
+              $data = mysqli_fetch_array($result);
+              echo $data["login_messages"];   
+            }
+            ?>'>
           </div>
           <div class="p-3 col-sm-12">
-              <input type="submit" value="change" class="btn btn-success btn-lg">
-        </div>
-      </form>
+            <input type="submit" name="login_message" value="change" class="btn btn-success btn-lg">
+          </div>
+        </form>
       </div>
-     
+      
 
-        
+      
 
       <div class="col-md-12 m-auto p-5">
         <div class="col-12 p-2">
           <h2>Change login theme</h2>
         </div>
-        <form action="login_theme.php" method="post">
-        <div class="d-flex">
-          <label>
-            <input type="radio" name="theme" value="theme1" checked>
-            <img src="theme_photo/theme1.png">
-          </label>
+        <form action="change_settings.php" method="post">
+          <div class="d-flex">
+            <label>
+              <input type="radio" name="theme" value="theme1" checked>
+              <img src="theme_photo/theme1.png">
+            </label>
 
-          <label>
-            <input type="radio" name="theme" value="theme2" >
-            <img src="theme_photo/theme2.png">
-          </label><label>
-            <input type="radio" name="theme" value="theme3" >
-            <img src="theme_photo/theme3.png">
-          </label>
+            <label>
+              <input type="radio" name="theme" value="theme2" >
+              <img src="theme_photo/theme2.png">
+            </label><label>
+              <input type="radio" name="theme" value="theme3" >
+              <img src="theme_photo/theme3.png">
+            </label>
 
 
-        </div>
-                        <input type="submit" value="change" class="btn btn-success btn-lg">
+          </div>
+          <input type="submit" name="login_theme" value="change" class="btn btn-success btn-lg">
 
-      </form>
+        </form>
       </div>
 
 

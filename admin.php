@@ -80,7 +80,7 @@ if (empty($_SESSION["admin"]))
 				if($num > 0){
 					echo '<div class="col-md-6 pb-5">
 					<div><h3 class="bg-success">Logged in Users</h3></div>';
-					echo ' <form action="force_logout.php" method="post">';
+					echo ' <form action="users.php" method="post">';
 					echo '<div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
 					<table class="table table-striped table-light table-hover ">
 					<thead class="thead-dark">';
@@ -102,7 +102,7 @@ if (empty($_SESSION["admin"]))
 						echo ' </tbody></table>
 						</div>              
 
-						<div><input type="submit" value="Logout" class="btn btn-danger btn-lg"></div>
+						<div><input type="submit" name="fourceLogout" value="fourceLogout" class="btn btn-danger btn-lg"></div>
 						</form>
 						</div>';
 
@@ -177,8 +177,8 @@ if (empty($_SESSION["admin"]))
 						</table>
 						</div>
 						<div>
-						<input id="enable" type="submit" value="Enable" class="btn btn-success btn-lg">
-						<input id="disable" type="submit" value="Disable" class="btn btn-danger btn-lg"></div>
+						<input id="enable" type="submit" name="Enable" value="Enable" class="btn btn-success btn-lg">
+						<input id="disable" type="submit" name="Disable" value="Disable" class="btn btn-danger btn-lg"></div>
 						</div> ';
 
 					}
@@ -225,11 +225,12 @@ if (empty($_SESSION["admin"]))
 				users[i] = $(this).val();
 			});			
 			var formDATA = {
+				"Disable":"Disable",
 				"users[]" : users
 			}
 			$.ajax({    
 				type: "POST",
-				url: "block_users.php",             
+				url: "users.php",             
 				data: formDATA,               
 				success: function(response){   
 					$("#response").html(response);
@@ -245,11 +246,12 @@ if (empty($_SESSION["admin"]))
 				users[i] = $(this).val();
 			});			
 			var formDATA = {
+				"Enable":"Enable",
 				"users[]" : users
 			}
 			$.ajax({    
 				type: "POST",
-				url: "unblock_users.php",             
+				url: "users.php",             
 				data: formDATA,               
 				success: function(response){   
 					$("#response").html(response);
